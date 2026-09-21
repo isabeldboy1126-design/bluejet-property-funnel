@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #FAF9F5;
+    color: #121816;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Prevent text overflow from unhyphenated long words/placeholders */
+  h1, h2, h3, h4, h5, h6, p, span, a, label {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  img, svg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+

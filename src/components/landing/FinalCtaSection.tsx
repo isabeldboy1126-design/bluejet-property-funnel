@@ -1,0 +1,55 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { funnelConfig } from '../../config/funnel.config';
+import { Button } from '../ui/Button';
+import { ArrowRight } from 'lucide-react';
+
+export const FinalCtaSection: React.FC = () => {
+  const navigate = useNavigate();
+  const {
+    finalCtaHeadingPrefix,
+    finalCtaHeadingHighlight,
+    finalCtaBody,
+    finalCtaButtonText,
+  } = funnelConfig.landingPage;
+
+  return (
+    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-14 sm:py-20 text-center w-full">
+      <div className="bg-[#133E2B] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-14 shadow-card-hover relative overflow-hidden">
+        {/* Subtle decorative glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-24 -right-24 w-64 h-64 rounded-full bg-brand-800/50 blur-2xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-brand-950/40 blur-2xl"
+        />
+
+        <div className="relative z-10 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight break-words leading-tight">
+            {finalCtaHeadingPrefix}{' '}
+            <span className="text-brand-200 block sm:inline">
+              {finalCtaHeadingHighlight}
+            </span>
+          </h2>
+          <p className="mt-4 text-xs sm:text-base text-brand-100 font-normal leading-relaxed">
+            {finalCtaBody}
+          </p>
+
+          <div className="mt-8 flex justify-center">
+            <Button
+              size="lg"
+              variant="secondary"
+              onClick={() => navigate('/intent')}
+              className="group font-semibold text-brand-950 bg-white hover:bg-brand-50 shadow-md border-none text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-3.5 max-w-full"
+            >
+              <span>{finalCtaButtonText}</span>
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform shrink-0" />
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
