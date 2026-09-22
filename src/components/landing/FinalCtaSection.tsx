@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { funnelConfig } from '../../config/funnel.config';
+import { useFunnel } from '../../context/FunnelContext';
 import { Button } from '../ui/Button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 
 export const FinalCtaSection: React.FC = () => {
   const navigate = useNavigate();
+  const { openInspectionModal } = useFunnel();
   const {
     finalCtaHeadingPrefix,
     finalCtaHeadingHighlight,
@@ -37,15 +39,27 @@ export const FinalCtaSection: React.FC = () => {
             {finalCtaBody}
           </p>
 
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+            {/* PRIMARY CTA */}
             <Button
               size="lg"
               variant="secondary"
               onClick={() => navigate('/intent')}
-              className="group font-semibold text-brand-950 bg-white hover:bg-brand-50 shadow-md border-none text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-3.5 max-w-full"
+              className="w-full sm:w-auto font-semibold text-brand-950 bg-white hover:bg-brand-50 shadow-md border-none text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-3.5"
             >
               <span>{finalCtaButtonText}</span>
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform shrink-0" />
+            </Button>
+
+            {/* SECONDARY CTA */}
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => openInspectionModal()}
+              className="w-full sm:w-auto border-white/50 text-white hover:bg-white/10 hover:border-white text-xs sm:text-sm px-5 sm:px-6 py-3 sm:py-3.5"
+            >
+              <Calendar className="w-4 h-4 mr-2 text-brand-200 shrink-0" />
+              <span>{funnelConfig.inspection.secondaryCtaText}</span>
             </Button>
           </div>
         </div>

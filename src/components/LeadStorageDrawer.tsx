@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useFunnel } from '../context/FunnelContext';
 import { Database, X, Copy, Check } from 'lucide-react';
 
@@ -51,7 +51,7 @@ export const LeadStorageDrawer: React.FC = () => {
               {capturedLeads.length === 0 ? (
                 <div className="text-center py-8 text-ink-subtle">
                   <p>No leads captured yet.</p>
-                  <p className="text-[11px] mt-1">Submit either the Free Resource form or the Buyer Qualification form to see real-time structured data.</p>
+                  <p className="text-[11px] mt-1">Submit the Free Resource form, Buyer Qualification form, or Book an Inspection to see real-time structured data.</p>
                 </div>
               ) : (
                 capturedLeads.map((lead) => (
@@ -61,7 +61,11 @@ export const LeadStorageDrawer: React.FC = () => {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-bold text-brand-900">
-                        {lead.intent === 'buyer_qualification' ? '🎯 Buyer Lead' : '📘 Resource Lead'}
+                        {lead.intent === 'direct_inspection'
+                          ? '📅 Inspection Lead'
+                          : lead.intent === 'buyer_qualification'
+                          ? '🎯 Qualified Buyer Lead'
+                          : '📘 Resource Lead'}
                       </span>
                       <button
                         onClick={() => handleCopy(lead)}

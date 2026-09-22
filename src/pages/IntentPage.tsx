@@ -5,12 +5,12 @@ import { useFunnel } from '../context/FunnelContext';
 import { FocusHeader } from '../components/layout/FocusHeader';
 import { Footer } from '../components/layout/Footer';
 import { Card } from '../components/ui/Card';
-import { Compass, BookOpen, ArrowRight, Sparkles } from 'lucide-react';
+import { Compass, BookOpen, ArrowRight, Sparkles, Calendar } from 'lucide-react';
 
 export const IntentPage: React.FC = () => {
   const navigate = useNavigate();
-  const { setIntent } = useFunnel();
-  const { intentPage } = funnelConfig;
+  const { setIntent, openInspectionModal } = useFunnel();
+  const { intentPage, inspection } = funnelConfig;
 
   // Primary Option -> Buyer qualification flow
   const handleSelectPrimary = () => {
@@ -111,8 +111,24 @@ export const IntentPage: React.FC = () => {
           </Card>
         </div>
 
+        {/* High-Intent Direct Sales Shortcut */}
+        <div className="mt-8 text-center bg-surface-muted/40 border border-surface-border/80 rounded-2xl p-4 sm:p-5 max-w-lg mx-auto">
+          <p className="text-xs text-ink-muted leading-relaxed">
+            Already decided on purchasing or want to inspect a property right away?{' '}
+            <button
+              type="button"
+              onClick={() => openInspectionModal()}
+              className="font-bold text-[#133E2B] hover:text-brand-950 underline underline-offset-2 inline-flex items-center gap-1 cursor-pointer mt-1 sm:mt-0"
+            >
+              <Calendar className="w-3.5 h-3.5 inline" />
+              <span>{inspection.secondaryCtaText}</span>
+              <ArrowRight className="w-3 h-3 inline" />
+            </button>
+          </p>
+        </div>
+
         {/* Reassurance */}
-        <p className="text-center text-xs text-ink-subtle mt-10">
+        <p className="text-center text-xs text-ink-subtle mt-8">
           🔒 No obligations. Choose the route that best matches your situation.
         </p>
       </main>

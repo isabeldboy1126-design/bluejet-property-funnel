@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { funnelConfig } from '../../config/funnel.config';
+import { useFunnel } from '../../context/FunnelContext';
 import { Button } from '../ui/Button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 
 export const BenefitsSection: React.FC = () => {
   const navigate = useNavigate();
+  const { openInspectionModal } = useFunnel();
   const {
     benefitsEyebrow,
     benefitsHeadingPrefix,
@@ -33,7 +35,7 @@ export const BenefitsSection: React.FC = () => {
             </p>
 
             {/* Contextual CTA on desktop */}
-            <div className="mt-8 hidden lg:block">
+            <div className="mt-8 hidden lg:block space-y-3">
               <Button
                 size="lg"
                 variant="secondary"
@@ -43,6 +45,15 @@ export const BenefitsSection: React.FC = () => {
                 <span>{benefitsCtaText}</span>
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
+
+              <button
+                type="button"
+                onClick={() => openInspectionModal()}
+                className="flex items-center text-xs font-semibold text-brand-200 hover:text-white transition-colors cursor-pointer pt-0.5"
+              >
+                <Calendar className="w-3.5 h-3.5 mr-1.5" />
+                <span>{funnelConfig.inspection.secondaryCtaText}</span>
+              </button>
             </div>
           </div>
 
@@ -64,7 +75,7 @@ export const BenefitsSection: React.FC = () => {
           </div>
 
           {/* Contextual CTA on mobile */}
-          <div className="lg:hidden col-span-1 mt-4">
+          <div className="lg:hidden col-span-1 mt-4 space-y-2.5">
             <Button
               size="lg"
               variant="secondary"
@@ -75,6 +86,15 @@ export const BenefitsSection: React.FC = () => {
               <span>{benefitsCtaText}</span>
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
+
+            <button
+              type="button"
+              onClick={() => openInspectionModal()}
+              className="w-full flex items-center justify-center text-xs font-semibold text-brand-200 hover:text-white py-1.5 transition-colors cursor-pointer"
+            >
+              <Calendar className="w-3.5 h-3.5 mr-1.5" />
+              <span>{funnelConfig.inspection.secondaryCtaText}</span>
+            </button>
           </div>
         </div>
       </div>

@@ -1,10 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { funnelConfig } from '../../config/funnel.config';
-import { ArrowRight } from 'lucide-react';
+import { useFunnel } from '../../context/FunnelContext';
+import { ArrowRight, Calendar } from 'lucide-react';
 
 export const ProblemSection: React.FC = () => {
   const navigate = useNavigate();
+  const { openInspectionModal } = useFunnel();
   const {
     problemEyebrow,
     problemHeadingPrefix,
@@ -79,6 +81,22 @@ export const ProblemSection: React.FC = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Secondary Advisor Route */}
+      <div className="mt-10 sm:mt-14 pt-6 border-t border-surface-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left bg-surface-muted/30 rounded-2xl p-4 sm:p-5">
+        <p className="text-xs sm:text-sm text-ink-muted">
+          Already evaluating a specific property or have urgent verification questions?
+        </p>
+        <button
+          type="button"
+          onClick={() => openInspectionModal()}
+          className="inline-flex items-center text-xs font-bold text-[#133E2B] hover:text-brand-950 group cursor-pointer bg-white px-4 py-2 rounded-full border border-surface-border shadow-xs hover:border-brand-800 transition-all shrink-0"
+        >
+          <Calendar className="w-3.5 h-3.5 mr-1.5 text-[#133E2B]" />
+          <span>{funnelConfig.inspection.advisorCtaText}</span>
+          <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
+        </button>
       </div>
     </section>
   );

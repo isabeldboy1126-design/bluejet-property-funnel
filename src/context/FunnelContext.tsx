@@ -1,5 +1,5 @@
-﻿import React, { createContext, useContext, useState, useEffect } from 'react';
-import { CapturedLead, ContactData, BuyerProfileData, LeadIntent } from '../types/funnel';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { CapturedLead, ContactData, BuyerProfileData, LeadIntent, InspectionLeadData } from '../types/funnel';
 
 interface FunnelContextType {
   intent: LeadIntent | null;
@@ -10,8 +10,13 @@ interface FunnelContextType {
   setBuyerProfile: React.Dispatch<React.SetStateAction<BuyerProfileData>>;
   latestLead: CapturedLead | null;
   capturedLeads: CapturedLead[];
+  isInspectionModalOpen: boolean;
+  inspectionInitialProperty: string;
+  openInspectionModal: (initialProperty?: string) => void;
+  closeInspectionModal: () => void;
   submitResourceLead: (contactData: ContactData) => CapturedLead;
   submitBuyerLead: (contactData: ContactData, profileData: BuyerProfileData) => CapturedLead;
+  submitInspectionLead: (leadData: InspectionLeadData) => CapturedLead;
   resetFunnel: () => void;
 }
 
@@ -38,6 +43,8 @@ export const FunnelProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [contact, setContact] = useState<ContactData>(initialContact);
   const [buyerProfile, setBuyerProfile] = useState<BuyerProfileData>(initialBuyerProfile);
   const [latestLead, setLatestLead] = useState<CapturedLead | null>(null);
+  const [isInspectionModalOpen, setIsInspectionModalOpen] = useState<boolean>(false);
+  const [inspectionInitialProperty, setInspectionInitialProperty] = useState<string>('');
   const [capturedLeads, setCapturedLeads] = useState<CapturedLead[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -54,6 +61,15 @@ export const FunnelProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       console.warn('Could not persist leads to localStorage', e);
     }
   }, [capturedLeads]);
+
+  const openInspectionModal = (initialProperty = '') => {
+    setInspectionInitialProperty(initialProperty);
+    setIsInspectionModalOpen(true);
+  };
+
+  const closeInspectionModal = () => {
+    setIsInspectionModalOpen(false);
+  };
 
   const submitResourceLead = (contactData: ContactData): CapturedLead => {
     const newLead: CapturedLead = {
@@ -87,6 +103,26 @@ export const FunnelProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     return newLead;
   };
 
+  const submitInspectionLead = (leadData: InspectionLeadData): CapturedLead => {
+    const newLead: CapturedLead = {
+      id: 'lead_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
+      submittedAt: new Date().toISOString(),
+      intent: 'direct_inspection',
+      contact: {
+        firstName: leadData.firstName,
+        whatsapp: leadData.whatsapp,
+        email: '',
+        marketingConsent: true,
+      },
+      propertyOfInterest: leadData.propertyOfInterest,
+      source: 'direct_inspection_cta',
+    };
+
+    setLatestLead(newLead);
+    setCapturedLeads((prev) => [newLead, ...prev]);
+    return newLead;
+  };
+
   const resetFunnel = () => {
     setIntent(null);
     setContact(initialContact);
@@ -104,8 +140,13 @@ export const FunnelProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         setBuyerProfile,
         latestLead,
         capturedLeads,
+        isInspectionModalOpen,
+        inspectionInitialProperty,
+        openInspectionModal,
+        closeInspectionModal,
         submitResourceLead,
         submitBuyerLead,
+        submitInspectionLead,
         resetFunnel,
       }}
     >

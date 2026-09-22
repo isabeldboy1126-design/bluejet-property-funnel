@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { FunnelProvider } from './context/FunnelContext';
 import { LandingPage } from './pages/LandingPage';
@@ -8,6 +8,7 @@ import { ResourceSuccessPage } from './pages/ResourceSuccessPage';
 import { BuyerQualifyPage } from './pages/BuyerQualifyPage';
 import { BuyerSuccessPage } from './pages/BuyerSuccessPage';
 import { LeadStorageDrawer } from './components/LeadStorageDrawer';
+import { InspectionModal } from './components/inspection/InspectionModal';
 
 export const App: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ export const App: React.FC = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <LeadStorageDrawer />
+        <InspectionModal />
       </BrowserRouter>
     </FunnelProvider>
   );

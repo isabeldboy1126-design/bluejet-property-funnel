@@ -1,7 +1,10 @@
 import React from 'react';
 import { funnelConfig } from '../../config/funnel.config';
+import { useFunnel } from '../../context/FunnelContext';
+import { ArrowRight, Calendar } from 'lucide-react';
 
 export const CompanyAuthoritySection: React.FC = () => {
+  const { openInspectionModal } = useFunnel();
   const {
     companyEyebrow,
     companyHeadingPrefix,
@@ -25,6 +28,18 @@ export const CompanyAuthoritySection: React.FC = () => {
           <p className="mt-4 text-sm sm:text-base text-ink-muted leading-relaxed">
             {companyBody}
           </p>
+
+          <div className="mt-5">
+            <button
+              type="button"
+              onClick={() => openInspectionModal()}
+              className="inline-flex items-center text-xs font-bold text-[#133E2B] hover:text-brand-950 transition-colors cursor-pointer group"
+            >
+              <Calendar className="w-3.5 h-3.5 mr-1.5" />
+              <span>{funnelConfig.inspection.advisorCtaText}</span>
+              <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+          </div>
         </div>
 
         {/* Right Column: 2–3 Compact Proof Points (5 cols) */}

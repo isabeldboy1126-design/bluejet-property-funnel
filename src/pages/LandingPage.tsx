@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { HeroSection } from '../components/landing/HeroSection';
@@ -8,6 +8,7 @@ import { BenefitsSection } from '../components/landing/BenefitsSection';
 import { GuideContentsSection } from '../components/landing/GuideContentsSection';
 import { CompanySocialProofSection } from '../components/landing/CompanySocialProofSection';
 import { FinalCtaSection } from '../components/landing/FinalCtaSection';
+import { MobileFloatingCta } from '../components/inspection/MobileFloatingCta';
 
 export const LandingPage: React.FC = () => {
   return (
@@ -36,6 +37,8 @@ export const LandingPage: React.FC = () => {
         <FinalCtaSection />
       </main>
       <Footer />
+      {/* Mobile Persistent Floating Secondary CTA */}
+      <MobileFloatingCta />
     </div>
   );
 };

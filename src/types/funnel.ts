@@ -1,10 +1,16 @@
-﻿export type LeadIntent = 'resource_only' | 'buyer_qualification';
+export type LeadIntent = 'resource_only' | 'buyer_qualification' | 'direct_inspection';
 
 export interface ContactData {
   firstName: string;
   whatsapp: string;
   email: string;
   marketingConsent: boolean;
+}
+
+export interface InspectionLeadData {
+  firstName: string;
+  whatsapp: string;
+  propertyOfInterest: string;
 }
 
 export interface BuyerProfileData {
@@ -20,6 +26,7 @@ export interface CapturedLead {
   intent: LeadIntent;
   contact: ContactData;
   buyerProfile?: BuyerProfileData;
+  propertyOfInterest?: string;
   source: string;
 }
 

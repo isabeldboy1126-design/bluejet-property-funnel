@@ -2,10 +2,12 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { funnelConfig } from '../../config/funnel.config';
 import { Button } from '../ui/Button';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen, Calendar } from 'lucide-react';
+import { useFunnel } from '../../context/FunnelContext';
 
 export const Navbar: React.FC = () => {
   const navigate = useNavigate();
+  const { openInspectionModal } = useFunnel();
 
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-surface-light/90 border-b border-surface-border/60 transition-all">
@@ -36,8 +38,18 @@ export const Navbar: React.FC = () => {
           </a>
         </nav>
 
-        {/* Action Button */}
+        {/* Action Buttons: Primary Free Guide + Secondary Inspection */}
         <div className="flex items-center shrink-0">
+          <button
+            type="button"
+            onClick={() => openInspectionModal()}
+            className="hidden sm:inline-flex items-center text-xs font-medium text-ink-muted hover:text-[#133E2B] transition-colors py-1.5 px-3 rounded-lg hover:bg-brand-50/70 mr-1.5 cursor-pointer"
+          >
+            <Calendar className="w-3.5 h-3.5 mr-1.5 text-[#133E2B]" />
+            <span>Book Inspection</span>
+          </button>
+
+          {/* Primary CTA */}
           <Button
             size="sm"
             onClick={() => navigate('/intent')}

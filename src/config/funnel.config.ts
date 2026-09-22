@@ -118,6 +118,19 @@ export interface FunnelConfig {
     primaryCtaText: string;
     secondaryCtaText: string;
   };
+  inspection: {
+    secondaryCtaText: string;
+    advisorCtaText: string;
+    floatingMobileCtaText: string;
+    modalTitle: string;
+    modalSubtitle: string;
+    propertyLabel: string;
+    propertyPlaceholder: string;
+    propertyOptions: string[];
+    submitButtonText: string;
+    whatsappAdvisorNumber: string;
+    whatsappMessageTemplate: string;
+  };
 }
 
 export const funnelConfig: FunnelConfig = {
@@ -377,5 +390,25 @@ export const funnelConfig: FunnelConfig = {
       'What the prospect can see, understand or compare on the website that helps them make a better property decision.',
     primaryCtaText: 'Outcome-oriented CTA',
     secondaryCtaText: 'Talk to an Advisor',
+  },
+  inspection: {
+    secondaryCtaText: 'Ready to Buy? Book an Inspection',
+    advisorCtaText: 'Speak to a Property Advisor',
+    floatingMobileCtaText: 'Book Inspection',
+    modalTitle: 'Ready to Buy? Book an Inspection',
+    modalSubtitle: 'Direct line to our property advisory team. Submit your details to immediately connect on WhatsApp and schedule an on-site or virtual inspection.',
+    propertyLabel: 'Property or Area of Interest',
+    propertyPlaceholder: 'e.g. 4-Bedroom Terrace in Lekki, Land in Epe, or Investment Advice',
+    propertyOptions: [
+      'Prime Residential Plots / Land',
+      'Luxury Terraces / Semi-Detached Duplexes',
+      'Fully Detached Luxury Homes',
+      'Commercial / High-Yield Property',
+      'Specific Development Consultation',
+      'Other / General Inquiries',
+    ],
+    submitButtonText: 'Continue to WhatsApp & Schedule',
+    whatsappAdvisorNumber: '2340000000000',
+    whatsappMessageTemplate: 'Hello, my name is {name}. I am ready to inspect or purchase: {property}. Please connect me with a property advisor.',
   },
 };

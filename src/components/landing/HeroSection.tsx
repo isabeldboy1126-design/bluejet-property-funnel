@@ -1,13 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { funnelConfig } from '../../config/funnel.config';
+import { useFunnel } from '../../context/FunnelContext';
 import { PillBadge } from '../ui/PillBadge';
 import { Button } from '../ui/Button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
   const navigate = useNavigate();
-  const { landingPage } = funnelConfig;
+  const { openInspectionModal } = useFunnel();
+  const { landingPage, inspection } = funnelConfig;
 
   return (
     <section className="relative pt-8 pb-10 sm:pt-12 sm:pb-14 px-4 sm:px-6 max-w-5xl mx-auto text-center w-full overflow-hidden">
@@ -55,19 +57,33 @@ export const HeroSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Centered Main CTA */}
-      <div className="mt-6 sm:mt-7 flex flex-col items-center w-full px-2">
-        <Button
-          size="lg"
-          onClick={() => navigate('/intent')}
-          className="shadow-md hover:shadow-lg group text-sm sm:text-base px-6 sm:px-8 py-3.5 max-w-full"
-        >
-          <span>{landingPage.mainCtaText}</span>
-          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform shrink-0" />
-        </Button>
+      {/* Centered CTA Block: Primary Free Guide + Secondary Inspection */}
+      <div className="mt-6 sm:mt-8 flex flex-col items-center w-full px-2">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-xl">
+          {/* PRIMARY CTA */}
+          <Button
+            size="lg"
+            onClick={() => navigate('/intent')}
+            className="w-full sm:w-auto shadow-md hover:shadow-lg group text-sm sm:text-base px-6 sm:px-8 py-3.5"
+          >
+            <span>{landingPage.mainCtaText}</span>
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform shrink-0" />
+          </Button>
+
+          {/* SECONDARY CTA */}
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={() => openInspectionModal()}
+            className="w-full sm:w-auto text-xs sm:text-sm px-5 sm:px-6 py-3.5 text-ink-dark border-surface-border hover:border-brand-800 hover:bg-brand-50/50"
+          >
+            <Calendar className="w-4 h-4 mr-2 text-[#133E2B] shrink-0" />
+            <span>{inspection.secondaryCtaText}</span>
+          </Button>
+        </div>
 
         {/* Small CTA Microcopy */}
-        <p className="mt-2 text-xs text-ink-subtle">
+        <p className="mt-2.5 text-xs text-ink-subtle">
           {landingPage.ctaMicrocopy}
         </p>
       </div>
