@@ -16,11 +16,11 @@ export const MobileFloatingCta: React.FC = () => {
       <button
         type="button"
         onClick={() => openInspectionModal()}
-        className="flex items-center gap-2 pl-3 pr-3.5 py-2 rounded-full bg-[#133E2B] text-white shadow-xl hover:bg-brand-950 border border-brand-800/90 active:scale-95 transition-all text-xs font-semibold cursor-pointer"
+        className="flex items-center gap-2 pl-3 pr-3.5 py-2 rounded-full bg-[#0B1B3D] text-white shadow-xl hover:bg-[#060D1E] border border-blue-900/60 active:scale-95 transition-all text-xs font-semibold cursor-pointer"
         aria-label="Ready to buy? Book an Inspection"
       >
-        <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-        <Calendar className="w-3.5 h-3.5 text-brand-200 shrink-0" />
+        <div className="w-2 h-2 rounded-full bg-[#0052FF] animate-pulse shadow-xs" />
+        <Calendar className="w-3.5 h-3.5 text-blue-300 shrink-0" />
         <span className="truncate">{funnelConfig.inspection.floatingMobileCtaText}</span>
       </button>
 

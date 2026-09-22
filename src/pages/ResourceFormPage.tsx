@@ -65,7 +65,7 @@ export const ResourceFormPage: React.FC = () => {
 
       <main className="flex-grow max-w-xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-12">
         <div className="text-center mb-6 sm:mb-8">
-          <span className="text-xs font-semibold uppercase tracking-widest text-brand-800 bg-brand-50 px-3 py-1 rounded-full border border-brand-100">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#0052FF] bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
             {resourceForm.eyebrow}
           </span>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-ink-dark tracking-tight mt-3 break-words">
@@ -92,7 +92,7 @@ export const ResourceFormPage: React.FC = () => {
                   if (errors.firstName) setErrors((prev) => ({ ...prev, firstName: undefined }));
                 }}
                 placeholder="Your first name"
-                className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-ink-dark placeholder-ink-subtle/70 bg-surface-light/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-800 transition-all ${
+                className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-ink-dark placeholder-ink-subtle/70 bg-surface-light/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0052FF] transition-all ${
                   errors.firstName ? 'border-red-400 focus:ring-red-500' : 'border-surface-border'
                 }`}
               />
@@ -106,7 +106,7 @@ export const ResourceFormPage: React.FC = () => {
               <label htmlFor="whatsapp" className="block text-xs font-semibold text-ink-dark mb-1.5">
                 WhatsApp Phone Number <span className="text-red-500">*</span>
               </label>
-              <div className="relative flex rounded-xl border border-surface-border bg-surface-light/60 focus-within:bg-white focus-within:ring-2 focus-within:ring-brand-800 transition-all overflow-hidden">
+              <div className="relative flex rounded-xl border border-surface-border bg-surface-light/60 focus-within:bg-white focus-within:ring-2 focus-within:ring-[#0052FF] transition-all overflow-hidden">
                 <span className="inline-flex items-center px-3 sm:px-3.5 border-r border-surface-border text-xs font-medium text-ink-muted select-none shrink-0 bg-surface-muted/40">
                   🇳🇬 +234
                 </span>
@@ -147,7 +147,7 @@ export const ResourceFormPage: React.FC = () => {
                   if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
                 }}
                 placeholder="name@example.com"
-                className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-ink-dark placeholder-ink-subtle/70 bg-surface-light/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-800 transition-all ${
+                className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-ink-dark placeholder-ink-subtle/70 bg-surface-light/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0052FF] transition-all ${
                   errors.email ? 'border-red-400 focus:ring-red-500' : 'border-surface-border'
                 }`}
               />
@@ -163,7 +163,7 @@ export const ResourceFormPage: React.FC = () => {
                   type="checkbox"
                   checked={marketingConsent}
                   onChange={(e) => setMarketingConsent(e.target.checked)}
-                  className="mt-0.5 w-4 h-4 rounded border-surface-border text-brand-900 focus:ring-brand-800 cursor-pointer"
+                  className="mt-0.5 w-4 h-4 rounded border-surface-border text-[#0052FF] focus:ring-[#0052FF] cursor-pointer"
                 />
                 <span className="text-xs text-ink-muted leading-relaxed">
                   {resourceForm.consentLabel}
@@ -181,7 +181,7 @@ export const ResourceFormPage: React.FC = () => {
 
             {/* Security note */}
             <div className="flex items-center justify-center gap-1.5 pt-2 text-[11px] text-ink-subtle">
-              <ShieldCheck className="w-3.5 h-3.5 text-brand-700" />
+              <ShieldCheck className="w-3.5 h-3.5 text-[#0052FF]" />
               <span>{resourceForm.trustNote}</span>
             </div>
           </form>

@@ -16,14 +16,14 @@ export const ProblemSection: React.FC = () => {
 
   return (
     <section id="problems" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 border-t border-surface-border/60 w-full">
-      {/* Section Header with Green Emphasis */}
+      {/* Section Header with Bluejet Emphasis */}
       <div className="max-w-3xl mb-10 sm:mb-14">
-        <span className="text-xs font-semibold uppercase tracking-widest text-[#133E2B]">
+        <span className="text-xs font-semibold uppercase tracking-widest text-[#0052FF]">
           {problemEyebrow}
         </span>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink-dark tracking-tight mt-2 leading-tight break-words">
           {problemHeadingPrefix}{' '}
-          <span className="text-[#133E2B]">{problemHeadingHighlight}</span>
+          <span className="text-[#0052FF]">{problemHeadingHighlight}</span>
         </h2>
       </div>
 
@@ -38,7 +38,7 @@ export const ProblemSection: React.FC = () => {
           >
             <div>
               {/* Number / Category Label */}
-              <div className="text-xs font-mono font-bold tracking-wider text-[#133E2B] pb-3 mb-4 border-b border-surface-border">
+              <div className="text-xs font-mono font-bold tracking-wider text-[#0052FF] pb-3 mb-4 border-b border-surface-border">
                 {item.label}
               </div>
 
@@ -59,7 +59,7 @@ export const ProblemSection: React.FC = () => {
 
               {/* Solution Block */}
               <div className="mb-6">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#133E2B] block mb-1">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#0052FF] block mb-1">
                   How This Guide Helps:
                 </span>
                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
@@ -73,7 +73,7 @@ export const ProblemSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => navigate('/intent')}
-                className="inline-flex items-center text-xs font-bold text-[#133E2B] hover:text-brand-950 group cursor-pointer"
+                className="inline-flex items-center text-xs font-bold text-[#0052FF] hover:text-[#0B1B3D] group cursor-pointer"
               >
                 <span>{item.ctaText}</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" />
@@ -84,16 +84,16 @@ export const ProblemSection: React.FC = () => {
       </div>
 
       {/* Secondary Advisor Route */}
-      <div className="mt-10 sm:mt-14 pt-6 border-t border-surface-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left bg-surface-muted/30 rounded-2xl p-4 sm:p-5">
+      <div className="mt-10 sm:mt-14 pt-6 border-t border-surface-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left bg-blue-50/30 border-blue-100/60 rounded-2xl p-4 sm:p-5">
         <p className="text-xs sm:text-sm text-ink-muted">
           Already evaluating a specific property or have urgent verification questions?
         </p>
         <button
           type="button"
           onClick={() => openInspectionModal()}
-          className="inline-flex items-center text-xs font-bold text-[#133E2B] hover:text-brand-950 group cursor-pointer bg-white px-4 py-2 rounded-full border border-surface-border shadow-xs hover:border-brand-800 transition-all shrink-0"
+          className="inline-flex items-center text-xs font-bold text-[#0052FF] hover:text-[#0B1B3D] group cursor-pointer bg-white px-4 py-2 rounded-full border border-surface-border shadow-xs hover:border-[#0052FF] transition-all shrink-0"
         >
-          <Calendar className="w-3.5 h-3.5 mr-1.5 text-[#133E2B]" />
+          <Calendar className="w-3.5 h-3.5 mr-1.5 text-[#0052FF]" />
           <span>{funnelConfig.inspection.advisorCtaText}</span>
           <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
         </button>

@@ -131,7 +131,7 @@ export const BuyerQualifyPage: React.FC = () => {
           </div>
           <div className="w-full h-1.5 bg-surface-border rounded-full overflow-hidden">
             <div
-              className="h-full bg-brand-800 transition-all duration-300 ease-out"
+              className="h-full bg-[#0052FF] transition-all duration-300 ease-out"
               style={{ width: `${(currentStep / 3) * 100}%` }}
             />
           </div>
@@ -163,7 +163,7 @@ export const BuyerQualifyPage: React.FC = () => {
                         setErrors((prev) => ({ ...prev, propertyType: '' }));
                       }
                     }}
-                    className={`w-full px-4 py-3 rounded-xl border text-sm text-ink-dark bg-surface-light/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-800 appearance-none pr-10 cursor-pointer transition-all ${
+                    className={`w-full px-4 py-3 rounded-xl border text-sm text-ink-dark bg-surface-light/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0052FF] appearance-none pr-10 cursor-pointer transition-all ${
                       errors.propertyType
                         ? 'border-red-400 focus:ring-red-500'
                         : 'border-surface-border'
@@ -203,7 +203,7 @@ export const BuyerQualifyPage: React.FC = () => {
                         setErrors((prev) => ({ ...prev, preferredLocation: '' }));
                       }
                     }}
-                    className={`w-full px-4 py-3 rounded-xl border text-sm text-ink-dark bg-surface-light/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-800 appearance-none pr-10 cursor-pointer transition-all ${
+                    className={`w-full px-4 py-3 rounded-xl border text-sm text-ink-dark bg-surface-light/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0052FF] appearance-none pr-10 cursor-pointer transition-all ${
                       errors.preferredLocation
                         ? 'border-red-400 focus:ring-red-500'
                         : 'border-surface-border'
@@ -264,7 +264,7 @@ export const BuyerQualifyPage: React.FC = () => {
                         setErrors((prev) => ({ ...prev, budgetRange: '' }));
                       }
                     }}
-                    className={`w-full px-4 py-3 rounded-xl border text-sm text-ink-dark bg-surface-light/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-800 appearance-none pr-10 cursor-pointer transition-all ${
+                    className={`w-full px-4 py-3 rounded-xl border text-sm text-ink-dark bg-surface-light/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0052FF] appearance-none pr-10 cursor-pointer transition-all ${
                       errors.budgetRange
                         ? 'border-red-400 focus:ring-red-500'
                         : 'border-surface-border'
@@ -304,7 +304,7 @@ export const BuyerQualifyPage: React.FC = () => {
                         setErrors((prev) => ({ ...prev, purchaseTimeframe: '' }));
                       }
                     }}
-                    className={`w-full px-4 py-3 rounded-xl border text-sm text-ink-dark bg-surface-light/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-800 appearance-none pr-10 cursor-pointer transition-all ${
+                    className={`w-full px-4 py-3 rounded-xl border text-sm text-ink-dark bg-surface-light/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0052FF] appearance-none pr-10 cursor-pointer transition-all ${
                       errors.purchaseTimeframe
                         ? 'border-red-400 focus:ring-red-500'
                         : 'border-surface-border'
@@ -366,7 +366,7 @@ export const BuyerQualifyPage: React.FC = () => {
                     if (errors.firstName) setErrors((prev) => ({ ...prev, firstName: '' }));
                   }}
                   placeholder="Your full name"
-                  className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-ink-dark placeholder-ink-subtle/70 bg-surface-light/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-800 transition-all ${
+                  className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-ink-dark placeholder-ink-subtle/70 bg-surface-light/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0052FF] transition-all ${
                     errors.firstName ? 'border-red-400 focus:ring-red-500' : 'border-surface-border'
                   }`}
                 />
@@ -383,7 +383,7 @@ export const BuyerQualifyPage: React.FC = () => {
                 >
                   {qualification.whatsappLabel} <span className="text-red-500">*</span>
                 </label>
-                <div className="relative flex rounded-xl border border-surface-border bg-surface-light/60 focus-within:bg-white focus-within:ring-2 focus-within:ring-brand-800 transition-all overflow-hidden">
+                <div className="relative flex rounded-xl border border-surface-border bg-surface-light/60 focus-within:bg-white focus-within:ring-2 focus-within:ring-[#0052FF] transition-all overflow-hidden">
                   <span className="inline-flex items-center px-3 sm:px-3.5 border-r border-surface-border text-xs font-medium text-ink-muted select-none shrink-0 bg-surface-muted/40">
                     🇳🇬 +234
                   </span>
@@ -423,7 +423,7 @@ export const BuyerQualifyPage: React.FC = () => {
                     if (errors.email) setErrors((prev) => ({ ...prev, email: '' }));
                   }}
                   placeholder="name@example.com"
-                  className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-ink-dark placeholder-ink-subtle/70 bg-surface-light/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-800 transition-all ${
+                  className={`w-full px-3.5 py-2.5 rounded-xl border text-sm text-ink-dark placeholder-ink-subtle/70 bg-surface-light/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0052FF] transition-all ${
                     errors.email ? 'border-red-400 focus:ring-red-500' : 'border-surface-border'
                   }`}
                 />
@@ -439,7 +439,7 @@ export const BuyerQualifyPage: React.FC = () => {
                     type="checkbox"
                     checked={marketingConsent}
                     onChange={(e) => setMarketingConsent(e.target.checked)}
-                    className="mt-0.5 w-4 h-4 rounded border-surface-border text-brand-900 focus:ring-brand-800 cursor-pointer"
+                    className="mt-0.5 w-4 h-4 rounded border-surface-border text-[#0052FF] focus:ring-[#0052FF] cursor-pointer"
                   />
                   <span className="text-xs text-ink-muted leading-relaxed">
                     {qualification.consentLabel}

@@ -17,25 +17,25 @@ export const FinalCtaSection: React.FC = () => {
 
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 py-14 sm:py-20 text-center w-full">
-      <div className="bg-[#133E2B] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-14 shadow-card-hover relative overflow-hidden">
+      <div className="bg-[#0B1B3D] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-14 shadow-card-hover relative overflow-hidden">
         {/* Subtle decorative glow */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-24 -right-24 w-64 h-64 rounded-full bg-brand-800/50 blur-2xl"
+          className="pointer-events-none absolute -top-24 -right-24 w-64 h-64 rounded-full bg-[#0052FF]/25 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-brand-950/40 blur-2xl"
+          className="pointer-events-none absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-[#0052FF]/15 blur-2xl"
         />
 
         <div className="relative z-10 max-w-2xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight break-words leading-tight">
             {finalCtaHeadingPrefix}{' '}
-            <span className="text-brand-200 block sm:inline">
+            <span className="text-blue-300 block sm:inline">
               {finalCtaHeadingHighlight}
             </span>
           </h2>
-          <p className="mt-4 text-xs sm:text-base text-brand-100 font-normal leading-relaxed">
+          <p className="mt-4 text-xs sm:text-base text-blue-100 font-normal leading-relaxed">
             {finalCtaBody}
           </p>
 
@@ -45,7 +45,7 @@ export const FinalCtaSection: React.FC = () => {
               size="lg"
               variant="secondary"
               onClick={() => navigate('/intent')}
-              className="w-full sm:w-auto font-semibold text-brand-950 bg-white hover:bg-brand-50 shadow-md border-none text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-3.5"
+              className="w-full sm:w-auto font-semibold text-[#0B1B3D] bg-white hover:bg-blue-50 shadow-md border-none text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-3.5"
             >
               <span>{finalCtaButtonText}</span>
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform shrink-0" />
@@ -58,7 +58,7 @@ export const FinalCtaSection: React.FC = () => {
               onClick={() => openInspectionModal()}
               className="w-full sm:w-auto border-white/50 text-white hover:bg-white/10 hover:border-white text-xs sm:text-sm px-5 sm:px-6 py-3 sm:py-3.5"
             >
-              <Calendar className="w-4 h-4 mr-2 text-brand-200 shrink-0" />
+              <Calendar className="w-4 h-4 mr-2 text-blue-300 shrink-0" />
               <span>{funnelConfig.inspection.secondaryCtaText}</span>
             </Button>
           </div>

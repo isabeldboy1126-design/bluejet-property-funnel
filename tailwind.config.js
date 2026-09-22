@@ -1,4 +1,4 @@
-﻿/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     './index.html',
@@ -8,28 +8,28 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#F2F7F4',
-          100: '#E1EFE7',
-          200: '#C3DFCE',
-          300: '#9AC9AE',
-          400: '#68AC85',
-          500: '#439063',
-          600: '#2E734B',
-          700: '#235C3C',
-          800: '#1B472F',
-          900: '#133E2B',
-          950: '#092116',
+          50: '#EFF6FF',
+          100: '#DBEAFE',
+          200: '#BFDBFE',
+          300: '#93C5FD',
+          400: '#60A5FA',
+          500: '#2563EB',
+          600: '#0052FF', // Bright royal blue action/accent
+          700: '#1D4ED8',
+          800: '#112552',
+          900: '#0B1B3D', // Deep navy blue trust/base
+          950: '#060D1E',
         },
         surface: {
-          light: '#FAF9F5',
+          light: '#F8FAFC',
           card: '#FFFFFF',
-          muted: '#F4F3ED',
-          border: '#E8E7DF',
+          muted: '#F1F5F9',
+          border: '#E2E8F0',
         },
         ink: {
-          dark: '#121816',
-          muted: '#525E58',
-          subtle: '#88958F',
+          dark: '#0F172A',
+          muted: '#475569',
+          subtle: '#94A3B8',
         }
       },
       fontFamily: {

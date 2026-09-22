@@ -54,8 +54,8 @@ Official Company Website: ${company.websiteUrl}
 
       <main className="flex-grow max-w-xl mx-auto w-full px-4 sm:px-6 py-10 sm:py-16 text-center">
         {/* Success Icon */}
-        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-brand-50 text-brand-800 flex items-center justify-center mx-auto mb-4 sm:mb-6 border border-brand-200 shrink-0">
-          <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8 text-brand-700" />
+        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-blue-50 text-[#0052FF] flex items-center justify-center mx-auto mb-4 sm:mb-6 border border-blue-200 shrink-0">
+          <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8 text-[#0052FF]" />
         </div>
 
         <h1 className="text-2xl sm:text-3xl font-extrabold text-ink-dark tracking-tight break-words">
@@ -69,8 +69,8 @@ Official Company Website: ${company.websiteUrl}
         {/* Resource Download Card */}
         <Card className="mt-6 sm:mt-8 p-5 sm:p-6 bg-surface-card border-surface-border text-left">
           <div className="flex items-center gap-3 sm:gap-3.5 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-surface-border">
-            <div className="w-10 h-10 rounded-xl bg-brand-900 text-white flex items-center justify-center shrink-0">
-              <FileText className="w-5 h-5 text-brand-200" />
+            <div className="w-10 h-10 rounded-xl bg-[#0B1B3D] text-white flex items-center justify-center shrink-0">
+              <FileText className="w-5 h-5 text-blue-300" />
             </div>
             <div className="min-w-0">
               <div className="text-[11px] font-medium text-ink-subtle uppercase">Demo Resource</div>

@@ -115,7 +115,10 @@ export const FunnelProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         marketingConsent: true,
       },
       propertyOfInterest: leadData.propertyOfInterest,
-      source: 'direct_inspection_cta',
+      metadata: leadData.metadata,
+      source: leadData.metadata?.utmSource && leadData.metadata.utmSource !== 'direct' 
+        ? `campaign_${leadData.metadata.utmSource}` 
+        : 'direct_inspection_cta',
     };
 
     setLatestLead(newLead);

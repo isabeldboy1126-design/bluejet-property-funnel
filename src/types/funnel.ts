@@ -7,10 +7,24 @@ export interface ContactData {
   marketingConsent: boolean;
 }
 
+export interface LeadMetadata {
+  pageUrl: string;
+  pathname: string;
+  referrer: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
+  adId?: string;
+  timestamp: string;
+}
+
 export interface InspectionLeadData {
   firstName: string;
   whatsapp: string;
-  propertyOfInterest: string;
+  propertyOfInterest?: string;
+  metadata?: LeadMetadata;
 }
 
 export interface BuyerProfileData {
@@ -27,6 +41,7 @@ export interface CapturedLead {
   contact: ContactData;
   buyerProfile?: BuyerProfileData;
   propertyOfInterest?: string;
+  metadata?: LeadMetadata;
   source: string;
 }
 

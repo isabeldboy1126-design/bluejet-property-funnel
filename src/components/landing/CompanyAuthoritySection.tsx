@@ -18,12 +18,12 @@ export const CompanyAuthoritySection: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
         {/* Left Column: Editorial Heading & Introduction (7 cols) */}
         <div className="lg:col-span-7">
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#133E2B]">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#0052FF]">
             {companyEyebrow}
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-ink-dark tracking-tight mt-2 break-words">
             {companyHeadingPrefix}{' '}
-            <span className="text-[#133E2B]">{companyHeadingHighlight}</span>
+            <span className="text-[#0052FF]">{companyHeadingHighlight}</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-ink-muted leading-relaxed">
             {companyBody}
@@ -33,7 +33,7 @@ export const CompanyAuthoritySection: React.FC = () => {
             <button
               type="button"
               onClick={() => openInspectionModal()}
-              className="inline-flex items-center text-xs font-bold text-[#133E2B] hover:text-brand-950 transition-colors cursor-pointer group"
+              className="inline-flex items-center text-xs font-bold text-[#0052FF] hover:text-[#0B1B3D] transition-colors cursor-pointer group"
             >
               <Calendar className="w-3.5 h-3.5 mr-1.5" />
               <span>{funnelConfig.inspection.advisorCtaText}</span>
@@ -49,7 +49,7 @@ export const CompanyAuthoritySection: React.FC = () => {
               key={idx}
               className="pb-4 border-b border-surface-border/70 last:border-b-0 last:pb-0"
             >
-              <div className="text-2xl sm:text-3xl font-extrabold text-[#133E2B] tracking-tight font-sans">
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#0B1B3D] tracking-tight font-sans">
                 {item.value}
               </div>
               <div className="text-xs sm:text-sm font-medium text-ink-dark mt-0.5">

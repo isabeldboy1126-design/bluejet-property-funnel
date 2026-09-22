@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { funnelConfig } from '../../config/funnel.config';
-import { ArrowLeft, BookOpen } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import { BluejetLogo } from '../ui/BluejetLogo';
 
 interface FocusHeaderProps {
   backTo?: string;
@@ -15,21 +16,19 @@ export const FocusHeader: React.FC<FocusHeaderProps> = ({
   const navigate = useNavigate();
 
   return (
-    <header className="w-full bg-surface-light border-b border-surface-border/60 py-3.5 sm:py-4 px-4 sm:px-6">
+    <header className="w-full bg-white border-b border-surface-border/80 py-3.5 sm:py-4 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto flex items-center justify-between gap-2">
         <button
           onClick={() => navigate(backTo)}
-          className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-ink-muted hover:text-ink-dark transition-colors cursor-pointer py-1 px-1.5 sm:px-2 rounded-lg hover:bg-surface-muted shrink-0"
+          className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-ink-muted hover:text-[#0052FF] transition-colors cursor-pointer py-1 px-1.5 sm:px-2 rounded-lg hover:bg-surface-muted shrink-0"
         >
           <ArrowLeft className="w-4 h-4 shrink-0" />
           <span>{backLabel}</span>
         </button>
 
         <Link to="/" className="flex items-center gap-2 text-ink-dark min-w-0">
-          <div className="w-7 h-7 rounded-lg bg-brand-900 text-white flex items-center justify-center font-bold text-xs shadow-subtle shrink-0">
-            <BookOpen className="w-3.5 h-3.5 text-brand-200" />
-          </div>
-          <span className="font-semibold text-xs sm:text-sm tracking-tight text-ink-dark truncate max-w-[130px] min-[360px]:max-w-[180px] sm:max-w-none">
+          <BluejetLogo size="sm" />
+          <span className="font-semibold text-xs sm:text-sm tracking-tight text-[#0B1B3D] truncate max-w-[130px] min-[360px]:max-w-[180px] sm:max-w-none">
             {funnelConfig.company.name}
           </span>
         </Link>

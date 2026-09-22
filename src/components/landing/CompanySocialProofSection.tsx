@@ -25,14 +25,14 @@ export const CompanySocialProofSection: React.FC = () => {
 
   return (
     <section id="social-proof" className="max-w-5xl mx-auto px-4 sm:px-6 py-14 sm:py-20 border-t border-surface-border/60 w-full">
-      {/* Editorial Header with Green Emphasis */}
+      {/* Editorial Header with Royal Blue Emphasis */}
       <div className="max-w-2xl mb-10 sm:mb-12">
-        <span className="text-xs font-semibold uppercase tracking-widest text-[#133E2B]">
+        <span className="text-xs font-semibold uppercase tracking-widest text-[#0052FF]">
           {socialProofEyebrow}
         </span>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink-dark tracking-tight mt-2 leading-tight break-words">
           {socialProofHeadingPrefix}{' '}
-          <span className="text-[#133E2B]">{socialProofHeadingHighlight}</span>
+          <span className="text-[#0052FF]">{socialProofHeadingHighlight}</span>
         </h2>
         <p className="mt-3 text-xs sm:text-sm text-ink-muted leading-relaxed">
           {socialProofSupporting}
@@ -45,12 +45,12 @@ export const CompanySocialProofSection: React.FC = () => {
         {featured && (
           <div className="lg:col-span-7 p-5 sm:p-8 rounded-2xl bg-surface-card border border-surface-border shadow-subtle flex flex-col justify-between">
             <div>
-              <Quote className="w-7 h-7 sm:w-8 sm:h-8 text-[#133E2B]/30 mb-3 sm:mb-4" />
+              <Quote className="w-7 h-7 sm:w-8 sm:h-8 text-[#0052FF]/30 mb-3 sm:mb-4" />
               <blockquote className="text-sm sm:text-lg text-ink-dark font-medium leading-relaxed italic break-words">
                 {featured.review}
               </blockquote>
             </div>
-            <div className="mt-5 sm:mt-6 pt-4 border-t border-surface-border text-xs font-mono font-bold text-[#133E2B] uppercase tracking-wider">
+            <div className="mt-5 sm:mt-6 pt-4 border-t border-surface-border text-xs font-mono font-bold text-[#0B1B3D] uppercase tracking-wider">
               {featured.author}
             </div>
           </div>
@@ -66,7 +66,7 @@ export const CompanySocialProofSection: React.FC = () => {
               <blockquote className="text-xs sm:text-sm text-ink-dark leading-relaxed italic break-words">
                 {item.review}
               </blockquote>
-              <div className="mt-3 sm:mt-4 pt-3 border-t border-surface-border/60 text-[11px] font-mono font-bold text-[#133E2B] uppercase tracking-wider">
+              <div className="mt-3 sm:mt-4 pt-3 border-t border-surface-border/60 text-[11px] font-mono font-bold text-[#0B1B3D] uppercase tracking-wider">
                 {item.author}
               </div>
             </div>

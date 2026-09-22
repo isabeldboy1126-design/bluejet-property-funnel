@@ -21,7 +21,7 @@ export const LeadStorageDrawer: React.FC = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-ink-dark/90 text-white text-[11px] font-mono hover:bg-ink-dark shadow-lg backdrop-blur cursor-pointer border border-gray-700/80 transition-transform active:scale-95"
         >
-          <Database className="w-3.5 h-3.5 text-brand-300" />
+          <Database className="w-3.5 h-3.5 text-[#0052FF]" />
           <span>Demo Data ({capturedLeads.length})</span>
         </button>
       </div>
@@ -33,7 +33,7 @@ export const LeadStorageDrawer: React.FC = () => {
             {/* Header */}
             <div className="px-5 py-4 border-b border-surface-border flex items-center justify-between bg-surface-muted/50">
               <div className="flex items-center gap-2">
-                <Database className="w-4 h-4 text-brand-900" />
+                <Database className="w-4 h-4 text-[#0052FF]" />
                 <h3 className="text-xs font-bold uppercase tracking-wider text-ink-dark">
                   Captured Demo Leads ({capturedLeads.length})
                 </h3>
@@ -60,7 +60,7 @@ export const LeadStorageDrawer: React.FC = () => {
                     className="p-3 rounded-xl border border-surface-border bg-surface-light font-mono text-[11px] relative"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-bold text-brand-900">
+                      <span className="font-bold text-[#0B1B3D]">
                         {lead.intent === 'direct_inspection'
                           ? '📅 Inspection Lead'
                           : lead.intent === 'buyer_qualification'
@@ -73,7 +73,7 @@ export const LeadStorageDrawer: React.FC = () => {
                       >
                         {copiedId === lead.id ? (
                           <>
-                            <Check className="w-3 h-3 text-emerald-600" />
+                            <Check className="w-3 h-3 text-[#0052FF]" />
                             <span>Copied</span>
                           </>
                         ) : (

@@ -31,7 +31,7 @@ export const HeroSection: React.FC = () => {
       {/* Headline: ~54px Desktop, ~34px Mobile with tight leading around 0.98 */}
       <h1 className="text-[28px] min-[360px]:text-[34px] sm:text-[44px] md:text-[54px] font-extrabold tracking-tight text-ink-dark max-w-4xl mx-auto leading-[1.05] sm:leading-[0.98] break-words">
         {landingPage.headlinePrefix}{' '}
-        <span className="text-[#133E2B]">
+        <span className="text-[#0052FF]">
           {landingPage.headlineHighlight}
         </span>
         <span className="block mt-1 sm:mt-1.5 text-ink-dark">
@@ -48,7 +48,7 @@ export const HeroSection: React.FC = () => {
       <div className="mt-5 flex flex-wrap items-center justify-center gap-y-2 gap-x-4 sm:gap-x-6 text-xs sm:text-sm font-medium text-ink-dark">
         {landingPage.valuePoints.map((point, index) => (
           <div key={index} className="inline-flex items-center gap-1.5">
-            <span className="text-[#133E2B] font-bold shrink-0">✓</span>
+            <span className="text-[#0052FF] font-bold shrink-0">✓</span>
             <span>{point}</span>
             {index < landingPage.valuePoints.length - 1 && (
               <span className="hidden sm:inline text-surface-border ml-4">|</span>
@@ -75,9 +75,9 @@ export const HeroSection: React.FC = () => {
             size="lg"
             variant="outline"
             onClick={() => openInspectionModal()}
-            className="w-full sm:w-auto text-xs sm:text-sm px-5 sm:px-6 py-3.5 text-ink-dark border-surface-border hover:border-brand-800 hover:bg-brand-50/50"
+            className="w-full sm:w-auto text-xs sm:text-sm px-5 sm:px-6 py-3.5 text-ink-dark border-surface-border hover:border-[#0052FF] hover:bg-blue-50/50"
           >
-            <Calendar className="w-4 h-4 mr-2 text-[#133E2B] shrink-0" />
+            <Calendar className="w-4 h-4 mr-2 text-[#0052FF] shrink-0" />
             <span>{inspection.secondaryCtaText}</span>
           </Button>
         </div>
@@ -93,7 +93,7 @@ export const HeroSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-center divide-y sm:divide-y-0 sm:divide-x divide-surface-border/60">
           {landingPage.heroProof.map((item, idx) => (
             <div key={idx} className="pt-2 sm:pt-0 sm:px-3">
-              <div className="text-xs sm:text-sm font-extrabold text-[#133E2B] tracking-wider font-mono uppercase">
+              <div className="text-xs sm:text-sm font-extrabold text-[#0B1B3D] tracking-wider font-mono uppercase">
                 {item.metric}
               </div>
               <div className="text-[11px] sm:text-xs text-ink-muted mt-0.5 leading-tight">

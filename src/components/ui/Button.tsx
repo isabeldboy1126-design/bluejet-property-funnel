@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
@@ -16,15 +16,15 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-800 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer';
+    'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0052FF] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer';
 
   const variants = {
     primary:
-      'bg-brand-900 hover:bg-brand-950 text-white shadow-sm hover:shadow-md active:scale-[0.99] border border-brand-900',
+      'bg-[#0052FF] hover:bg-[#0042D0] text-white shadow-sm hover:shadow-md active:scale-[0.99] border border-[#0052FF]',
     secondary:
       'bg-surface-card hover:bg-surface-muted text-ink-dark border border-surface-border shadow-sm hover:shadow active:scale-[0.99]',
     outline:
-      'bg-transparent hover:bg-brand-50 text-brand-900 border border-brand-800 active:scale-[0.99]',
+      'bg-transparent hover:bg-blue-50 text-[#0052FF] border border-[#0052FF] active:scale-[0.99]',
     ghost:
       'bg-transparent hover:bg-surface-muted text-ink-muted hover:text-ink-dark',
   };

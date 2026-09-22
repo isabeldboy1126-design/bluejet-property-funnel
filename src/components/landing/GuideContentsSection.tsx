@@ -16,14 +16,14 @@ export const GuideContentsSection: React.FC = () => {
 
   return (
     <section id="guide-contents" className="max-w-5xl mx-auto px-4 sm:px-6 py-14 sm:py-20 border-t border-surface-border/60 w-full">
-      {/* Editorial Section Header with Green Emphasis */}
+      {/* Editorial Section Header with Royal Blue Emphasis */}
       <div className="max-w-2xl mb-10 sm:mb-12">
-        <span className="text-xs font-semibold uppercase tracking-widest text-[#133E2B]">
+        <span className="text-xs font-semibold uppercase tracking-widest text-[#0052FF]">
           {insideEyebrow}
         </span>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink-dark tracking-tight mt-2 leading-tight break-words">
           {insideHeadingPrefix}{' '}
-          <span className="text-[#133E2B]">{insideHeadingHighlight}</span>
+          <span className="text-[#0052FF]">{insideHeadingHighlight}</span>
         </h2>
       </div>
 
@@ -35,7 +35,7 @@ export const GuideContentsSection: React.FC = () => {
             className="py-8 grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-8 items-baseline"
           >
             {/* Number Column (2 cols) */}
-            <div className="sm:col-span-2 text-sm font-mono font-bold text-[#133E2B]">
+            <div className="sm:col-span-2 text-sm font-mono font-bold text-[#0052FF]">
               {item.number}
             </div>
 
