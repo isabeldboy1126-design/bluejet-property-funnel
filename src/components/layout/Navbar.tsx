@@ -16,7 +16,7 @@ export const Navbar: React.FC = () => {
         {/* Brand Logo with Bluejet Visual Emblem */}
         <Link to="/" className="flex items-center gap-2.5 text-ink-dark hover:opacity-95 transition-opacity min-w-0 shrink">
           <BluejetLogo size="sm" />
-          <span className="font-bold tracking-tight text-sm sm:text-base text-[#0B1B3D] font-mono truncate">
+          <span className="font-extrabold tracking-tight text-sm sm:text-base text-[#0B1B3D] truncate">
             {funnelConfig.company.name}
           </span>
         </Link>

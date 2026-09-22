@@ -27,7 +27,7 @@ export const BluejetLogo: React.FC<BluejetLogoProps> = ({
           src="/bluejet-emblem.png"
           alt="Bluejet Properties"
           onError={() => setImgError(true)}
-          className={`${sizeClasses[size]} object-contain rounded-lg shadow-subtle shrink-0`}
+          className={`${sizeClasses[size]} object-contain shrink-0`}
         />
       ) : (
         <div

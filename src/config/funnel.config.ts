@@ -135,10 +135,10 @@ export interface FunnelConfig {
 
 export const funnelConfig: FunnelConfig = {
   company: {
-    name: '[COMPANY NAME]',
-    logoText: '[COMPANY NAME]',
+    name: 'BLUEJET PROPERTIES',
+    logoText: 'BLUEJET PROPERTIES',
     websiteUrl: 'https://mockup-01-land-sales.vercel.app/',
-    advisorContactUrl: 'https://wa.me/2340000000000?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20an%20advisor',
+    advisorContactUrl: 'https://wa.me/2348036105379?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20a%20Bluejet%20advisor',
     supportEmail: 'contact@example.com',
     bio: 'Two to three sentences explaining who the company is, what relevant experience they have, and why that experience makes this resource worth paying attention to.',
   },
@@ -172,7 +172,7 @@ export const funnelConfig: FunnelConfig = {
     ],
     companyEyebrow: "WHO’S BEHIND THIS GUIDE",
     companyHeadingPrefix: 'Created by',
-    companyHeadingHighlight: '[COMPANY NAME]',
+    companyHeadingHighlight: 'BLUEJET PROPERTIES',
     companyBody:
       'Two to three sentences explaining who the company is, what relevant experience they have, and why that experience makes this resource worth paying attention to.',
     companyProofItems: [
@@ -377,9 +377,9 @@ export const funnelConfig: FunnelConfig = {
     subheading: 'We’ve received your details.',
     sampleDownloadLabel: 'Download Sample Guide (Demo PDF)',
     downloadFilename: 'Property-Buyer-Guide-Sample.txt',
-    companyCtaTitle: 'Explore [COMPANY NAME]',
+    companyCtaTitle: 'Explore BLUEJET PROPERTIES',
     companyCtaDescription: 'Visit our company website to learn more about our work and available developments.',
-    companyCtaButtonText: 'Explore [COMPANY NAME]',
+    companyCtaButtonText: 'Explore BLUEJET PROPERTIES',
   },
   buyerSuccess: {
     headingTemplate: 'Thanks, {name}',
@@ -408,7 +408,7 @@ export const funnelConfig: FunnelConfig = {
       'Other / General Inquiries',
     ],
     submitButtonText: 'Continue to WhatsApp & Schedule',
-    whatsappAdvisorNumber: '2340000000000',
+    whatsappAdvisorNumber: '2348036105379',
     whatsappMessageTemplate: 'Hello, my name is {name}. I am ready to inspect or purchase: {property}. Please connect me with a property advisor.',
   },
 };
